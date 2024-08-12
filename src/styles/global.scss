@@ -30,7 +30,13 @@ html {
   font-family: ubunty, sans-serif;
 }
 
+body {
+  color: $base-color;
+  background-color: $base-background-color;
+}
+
 a{
+  color: inherit;
   text-decoration: none;
 }
 
@@ -38,7 +44,62 @@ li {
   list-style: none;
 }
 
-body {
+svg{
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.hover-link {
   color: $base-color;
-  background-color: $base-background-color;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out 0s;
+
+  &:hover {
+      color: $accent-color;
+  }
+}
+
+.hover-svg {
+  stroke: $base-color;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out 0s;
+
+  &:hover {
+      stroke: $accent-color;
+      color: $accent-color;
+  }
+
+  &:hover svg{
+      stroke: $accent-color;
+  }
+}
+
+.hover-rd {
+  position: relative;
+  background: rgb(18, 18, 18);
+  background-size: 400%;
+  border-radius: 30px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out 0s;
+
+  &:before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      z-index: -1;
+      background: $accent-color;
+      background-size: 400%;
+      border-radius: 40px;
+      opacity: 0;
+      transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover:before {
+      filter: blur(20px);
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
 }

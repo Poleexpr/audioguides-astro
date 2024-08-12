@@ -64,6 +64,18 @@
 	text-transform: uppercase;
 }
 
+.text5 {
+  font-family: ubunty, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  font-feature-settings:
+    "salt" on,
+    "liga" off;
+  color: $base-color;
+}
+
 .text-rd {
   font-family: ubunty, sans-serif;
   font-weight: 300;
@@ -80,18 +92,6 @@
     font-size: 17px;
     letter-spacing: 0;
   }
-}
-
-.text-copyright {
-  font-family: ubunty, sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  font-feature-settings:
-    "salt" on,
-    "liga" off;
-  color: $base-color;
 }
 
 .count {
