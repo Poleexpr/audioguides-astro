@@ -1,0 +1,83 @@
+---
+import { Picture } from "astro:assets";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import { IconArrowDown } from "@/components";
+import cupidAndPsyche from "@/images/cupid-and-psyche.png";
+import gzhelImg from "@/images/gzhel.png";
+
+import "./welcome.scss";
+
+interface Props {
+  title: string;
+  slogan: string;
+  order: string;
+  isCurrentLanguageRu?: boolean;
+  isCurrentLanguageEn?: boolean;
+}
+
+const { title, slogan, order, isCurrentLanguageRu, isCurrentLanguageEn } =
+  Astro.props;
+---
+
+<section id="welcome" class="welcome">
+  <div class="welcome__container">
+    <h1 class="welcome__title title">{title}</h1>
+    <div class="gzhel-container_first">
+      <div class="gzhel-img__wrapper">
+        <Picture
+          class="gzhel-img gzhel-img-first"
+          src={gzhelImg}
+          formats={["avif", "webp"]}
+          alt="Изображение гжели"
+          preload="webp"
+        />
+      </div>
+      <a href="#contacts">
+        <div class="welcome__orderButton">
+          <div class="orderButton">
+            <span class="text4">{order}</span>
+          </div>
+          <IconArrowDown className="orderButton-arrow" />
+        </div>
+      </a>
+    </div>
+    <div class="welcome__container-center">
+      <Picture
+        class="cupidAndPsyche-img"
+        src={cupidAndPsyche}
+        formats={["avif", "webp"]}
+        alt="Изображение Купида и Психеи"
+        preload="webp"
+      />
+    </div>
+    <div class="gzhel-container_second">
+      <div class="gzhel-img__wrapper">
+        <Picture
+          class="gzhel-img gzhel-img-second"
+          src={gzhelImg}
+          formats={["avif", "webp"]}
+          alt="Изображение гжели"
+          preload="webp"
+        />
+      </div>
+      <div id="welcomeSlogan" class="welcome__slogan text3">{slogan}</div>
+      <div class="welcome__links">
+        <div class="switch">
+          <a
+            href={getRelativeLocaleUrl("ru")}
+            id="ruLink"
+            class=`link-language link-left ${isCurrentLanguageRu && 'link-active'}`
+            data-btn="ru">RU</a
+          >
+          <a
+            href={getRelativeLocaleUrl("en")}
+            id="enLink"
+            class=`link-language link-right ${isCurrentLanguageEn && 'link-active'}`
+            data-btn="en">EN</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

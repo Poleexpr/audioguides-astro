@@ -1,7 +1,17 @@
 module.exports = {
 	overrides: [
 		{
-			files: ["*.astro"],
+			files: ["**/*.mjs", "*.mjs"], env: {
+				node: true,
+				es2021: true,
+			},
+			parserOptions: {
+				ecmaVersion: 'latest',
+				sourceType: "module",
+			},
+		},
+		{
+			files: ["**/*.astro", "*.astro"],
 			plugins: ["astro"],
 			env: {
 				node: true,
@@ -15,9 +25,6 @@ module.exports = {
 				ecmaVersion: 'latest',
 				sourceType: "module",
 			},
-			extends: [
-				'airbnb-base',
-			],
 			rules: {
 				"astro/no-conflict-set-directives": "error",
 				"astro/no-unused-define-vars-in-style": "error",
@@ -50,7 +57,7 @@ module.exports = {
 			},
 		},
 		{
-			files: ["**/*.astro/*.js", "*.astro/*.js"],
+			files: ["**/*.astro/*.js", "*.astro/*.js, **/*.js", "*.js"],
 			env: {
 				browser: true,
 				es2021: true,
@@ -67,20 +74,18 @@ module.exports = {
 			},
 		},
 		{
-			files: ["**/*.astro/*.ts", "*.astro/*.ts"],
+			files: ["**/*.astro/*.ts", "*.astro/*.ts", "**/*.ts", "*.ts"],
 			env: {
 				browser: true,
 				es2021: true,
 			},
 			parser: "@typescript-eslint/parser",
 			parserOptions: {
+				project: "./tsconfig.json",
 				ecmaVersion: 'latest',
 				sourceType: 'module',
-				project: null,
 			},
 			extends: [
-				'airbnb-base',
-				'airbnb-typescript',
 				'plugin:@typescript-eslint/recommended',
 				'plugin:@typescript-eslint/recommended-requiring-type-checking',
 				'prettier',
@@ -95,6 +100,7 @@ module.exports = {
 				'no-param-reassign': 0,
 				'no-restricted-syntax': 0,
 				'no-irregular-whitespace': 0,
+				"lines-between-class-members": ["error", "never"],
 				'@typescript-eslint/no-loop-func': 0,
 				'sort-keys': [1, 'asc', { natural: true, allowLineSeparatedGroups: true }],
 				'import/order': 0,
@@ -120,5 +126,6 @@ module.exports = {
 				],
 			},
 		},
+
 	],
 }

@@ -1,0 +1,237 @@
+@import "../../styles/variables.scss";
+
+.welcome__container {
+  width: var(--base-container-width);
+  margin: 100px auto 140px auto;
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  gap: 45px;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.welcome__title {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -47%);
+}
+
+.gzhel-container_first {
+  align-self: end;
+  position: relative;
+}
+
+.gzhel-container_second {
+  display: grid;
+  grid-template-rows: 66% 1fr 1fr;
+}
+
+.gzhel-img__wrapper {
+  width: 100%;
+}
+
+.cupidAndPsyche-img,
+.gzhel-img {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.welcome__orderButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  .orderButton {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(18, 18, 18, 1);
+    background: linear-gradient(
+      138.78deg,
+      rgb(224, 142, 69) 14.49%,
+      rgba(224, 142, 69, 0.5) 225.41%
+    );
+    .lng-orderbtn {
+      width: 90%;
+    }
+  }
+}
+
+.orderButton > span {
+  position: relative;
+  z-index: 1;
+}
+
+.orderButton:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(18, 18, 18, 1);
+  text-decoration: none;
+  background: linear-gradient(
+    138.78deg,
+    #efe6de 14.49%,
+    rgba(224, 142, 69, 0.5) 225.41%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out 0s;
+}
+
+.welcome__orderButton:hover .orderButton:after,
+.welcome__orderButton:hover .orderButton-arrow path {
+  opacity: 1;
+  stroke: #efe6de;
+}
+
+.welcome__slogan {
+  align-self: start;
+}
+
+.welcome__links {
+  justify-self: end;
+  align-self: end;
+  display: flex;
+  gap: 30px;
+  margin-top: 193px;
+}
+
+.orderButton-arrow {
+  position: absolute;
+  top: 235px;
+  left: 55%;
+  transform: translate(-55%, 0);
+}
+
+.orderButton-arrow path {
+  transition: all 0.3s ease-in-out 0s;
+  stroke: #e08e45;
+}
+
+.gzhel-img-first {
+  position: relative;
+  animation: rotate-first 60s infinite linear;
+}
+
+@keyframes rotate-first {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.gzhel-img-second {
+  position: relative;
+  animation: rotate-second 60s infinite linear;
+}
+
+@keyframes rotate-second {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.switch {
+  display: flex;
+
+  .link-language {
+    padding: 8px 13px;
+    border: 1px solid $base-color;
+    font-family: ubunty, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    color: $base-color;
+    background-color: rgba(18, 18, 18, 1);
+    outline: $base-color;
+    cursor: pointer;
+  }
+
+  .link-language:hover {
+    background-color: rgb(39, 132, 200, 0.8);
+  }
+
+  .link-language-active {
+    background-color: rgb(39, 132, 200, 0.8);
+  }
+
+  .link-active{
+    background-color: rgb(39, 132, 200, 0.8);
+  }
+ 
+  .link-left {
+    border-right: none;
+    border-radius: 22px 0 0 22px;
+  }
+
+  .link-right {
+    border-radius: 0 22px 22px 0;
+  }
+}
+
+@media screen and (max-width: 834px) {
+    .welcome__container{
+        margin: 0px auto 300px auto;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .welcome__container-center{
+        width: 200px;
+        justify-self: center;
+        grid-row-start: 1;
+    }
+
+    .gzhel-container_second {
+        margin-top: 30px;
+        grid-template-rows: auto;
+        gap: 35px;
+        grid-row-start: 2;
+    }
+
+    .gzhel-container_first {
+        grid-row-start: 3;
+    }
+
+    .gzhel-img__wrapper{
+        display: none;
+    }
+
+    .welcome__title {
+        top: 32%;
+        transform: translate(-50%, -32%);
+    }
+
+    .welcome__links{
+        margin-top: 0px;
+        justify-self: center;
+    }
+
+    .welcome__orderButton {
+        top: 40px;
+        transform: translate(-50%, 0);
+    }
+
+    .orderButton-arrow {
+        top: 150px;
+    }
+}

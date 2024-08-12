@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext ts --ext astro",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(tsx|ts|json)\"",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(astro)\"",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -23,7 +23,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
+    "@astrojs/ts-plugin": "^1.9.1",
     "astro": "^4.13.3",
+    "sass": "^1.77.8",
+    "sharp": "^0.33.4",
     "typescript": "^5.5.4"
   },
   "devDependencies": {
