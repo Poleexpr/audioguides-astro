@@ -1,53 +1,68 @@
 ---
-import { IconArrowUp, IconLogoAudioguides, IconLogoFb, IconLogoVk, IconLogoRd, IconLogoTg } from "@/components";
+import {
+  IconArrowUp,
+  IconLogoAudioguides,
+  IconLogoFb,
+  IconLogoVk,
+  IconLogoRd,
+  IconLogoTg,
+} from "@/components";
 
-import './footer.scss'
+import "./footer.scss";
 
 interface Props {
-	copyright: string;
-	textUp: string;
+  copyright: string;
+  textUp: string;
 }
 
-const { copyright, textUp } =
-  Astro.props;
+const { copyright, textUp } = Astro.props;
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-	<div class="footer__container">
-					<a class="footer__rd footer__box hover-rd" href="https://russiandino.ru/" target="_blank">
-									<IconLogoRd className="rd-img" />
-									<div class="text-rd">
-													<p>made by</p>
-													<p class="text-rd-russkiy">Russkiy</p>
-													<p class="text-rd-dinozavr">Dinozavr</p>
-									</div>
-					</a>
-					<div class="footer__info">
-									<div class="footer__img-wrapper">
-													<IconLogoAudioguides className="logo-img" />
-									</div>
-									<div class="footer__network">
-													<a href="https://t.me/aguides" target="_blank">
-																	<IconLogoTg className="hover-svg" />
-													</a>
-													<a href="https://vk.com/a.guides" target="_blank">
-																	<IconLogoVk className="hover-svg" />
-													</a>
-													<a href="https://www.facebook.com/audioguides.ru" target="_blank">
-																	<IconLogoFb className="hover-svg" />
-													</a>
-									</div>
-					</div>
-					<a href="#main" data-goto="#main" class="footer__button footer__box hover-svg menu__link">
-									<div class="text4">{ textUp }</div>
-									<IconArrowUp />
-					</a>
-	</div>
-	<div class="footer__copyright">
-					<div class="text5">
-									© 2015-{currentYear} { copyright }
-					</div>
-	</div>
+  <div class="footer__container">
+    <a
+      class="footer__rd footer__box hover-rd"
+      href="https://russiandino.ru/"
+      target="_blank"
+    >
+      <IconLogoRd className="rd-img" />
+      <div class="text-rd">
+        <p>made by</p>
+        <p class="text-rd-russkiy">Russkiy</p>
+        <p class="text-rd-dinozavr">Dinozavr</p>
+      </div>
+    </a>
+    <div class="footer__info">
+      <div class="footer__img-wrapper">
+        <IconLogoAudioguides className="logo-img" />
+      </div>
+      <div class="footer__network">
+        <a href="https://t.me/aguides" target="_blank">
+          <IconLogoTg className="hover-svg" />
+        </a>
+        <a href="https://vk.com/a.guides" target="_blank">
+          <IconLogoVk className="hover-svg" />
+        </a>
+        <a href="https://www.facebook.com/audioguides.ru" target="_blank">
+          <IconLogoFb className="hover-svg" />
+        </a>
+      </div>
+    </div>
+    <a
+      href="#main"
+      data-goto="#main"
+      class="footer__button footer__box hover-svg menu__link"
+    >
+      <div class="text4">{textUp}</div>
+      <IconArrowUp />
+    </a>
+  </div>
+  <div class="footer__copyright">
+    <div class="text5">
+      © 2015-{currentYear}
+      {copyright}
+    </div>
+  </div>
 </footer>
