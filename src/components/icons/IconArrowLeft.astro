@@ -1,0 +1,20 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<svg
+  class="swiper-button-prev carousel__btn carousel__btn-back hover-svg"
+  data-dir="prev"
+  width="85"
+  height="13"
+  viewBox="0 0 85 13"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class={className}
+>
+  <path d="M85 12L0.999998 12L24.2941 0.999997"></path>
+</svg>

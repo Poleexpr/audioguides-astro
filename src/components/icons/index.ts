@@ -8,3 +8,6 @@ export { default as IconLogoAudioguides } from "./IconLogoAudioguides.astro";
 export { default as IconPlay } from "./IconPlay.astro";
 export { default as IconText } from "./IconText.astro";
 export { default as IconSubwoofer } from "./IconSubwoofer.astro";
+export { default as IconCircle } from "./IconCircle.astro";
+export { default as IconArrowLeft } from "./IconArrowLeft.astro";
+export { default as IconArrowRight } from "./IconArrowRight.astro";

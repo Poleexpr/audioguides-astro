@@ -1,0 +1,25 @@
+---
+import { IconCircle } from "@/components";
+
+import "./projectsCard.scss";
+
+interface Props {
+  link: string;
+  img: string;
+  titleRu?: string;
+  titleEn?: string;
+}
+
+const { link, img, titleRu, titleEn } = Astro.props;
+---
+
+<div class="cardContent">
+  <a href={link} target="_blank">
+    <img class="cardContent__img" src={img} alt={titleRu ? titleRu : titleEn} />
+    <p class="cardContent__description text2">{titleRu ? titleRu : titleEn}</p>
+    <p class="cardContent__link link">{titleRu ? "Слушать" : "Listen"}</p>
+  </a>
+</div>
+<div class="circle">
+  <IconCircle />
+</div>

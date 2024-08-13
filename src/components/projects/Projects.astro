@@ -1,0 +1,55 @@
+---
+import {
+  SectionTitle,
+  ProjectCard,
+  IconArrowLeft,
+  IconArrowRight,
+} from "@/components";
+
+interface Props {
+  title: string;
+  projectConfig: {
+    link: string;
+    img: string;
+    titleRu?: string;
+    titleEn?: string;
+  }[];
+}
+
+const { title, projectConfig } = Astro.props;
+---
+
+<section class="projects" id="projects">
+  <SectionTitle className="projects__title" title={title} />
+  <div class="projects__container">
+    <div class="swiper-container">
+      <div class="swiper projestsSwiper">
+        <div class="swiper-wrapper">
+          {
+            projectConfig.map((card) => (
+              <div class="swiper-slide">
+                <ProjectCard
+                  link={card.link}
+                  img={card.img}
+                  titleRu={card.titleRu}
+                  titleEn={card.titleEn}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="carousel__control">
+        <IconArrowLeft
+          className="swiper-button-prev carousel__btn carousel__btn-back hover-svg"
+        />
+        <div class="carousel__count count swiper-pagination"></div>
+        <IconArrowRight
+          className="swiper-button-next carousel__btn carousel__btn-next hover-svg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="./projectSwiper.ts"></script>

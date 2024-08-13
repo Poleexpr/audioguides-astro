@@ -1,7 +1,18 @@
 ---
-import { Welcome, Footer, About, Services } from "@/components";
+import { Welcome, Footer, About, Services, Projects } from "@/components";
 import { Layout } from "@/layouts";
-import { servicesConfig } from "@/utils";
+import { servicesConfig, projectConfig } from "@/utils";
+
+const servicesConfigEn = servicesConfig.map(({ img, descriptionEn }) => ({
+  img,
+  descriptionEn,
+}));
+
+const projectConfigEn = projectConfig.map(({ link, img, titleEn }) => ({
+  link,
+  img,
+  titleEn,
+}));
 ---
 
 <Layout title="Audioguides">
@@ -23,7 +34,8 @@ import { servicesConfig } from "@/utils";
       videoWebm="../../../public/videos/audioguidesEn.webm"
       videoMp4="../../../public/videos/audioguidesEn.mp4"
     />
-    <Services title="наши услуги" servicesConfig={servicesConfig} />
+    <Services title="services" servicesConfig={servicesConfigEn} />
+    <Projects title="portfolio" projectConfig={projectConfigEn} />
   </main>
   <Footer
     copyright="Audioguides.ru. Saint Petersburg. All rights reserved."
