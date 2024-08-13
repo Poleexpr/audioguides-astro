@@ -6,6 +6,8 @@ import {
   IconArrowRight,
 } from "@/components";
 
+import "./projects.scss";
+
 interface Props {
   title: string;
   projectsConfig: {
@@ -17,8 +19,6 @@ interface Props {
 }
 
 const { title, projectsConfig } = Astro.props;
-
-import "./projects.scss";
 ---
 
 <section class="projects" id="projects">

@@ -1,0 +1,210 @@
+@import "../../styles/variables";
+
+.contacts {
+  .contacts__title {
+    width: 95.85%;
+    margin: -45px auto;
+  }
+
+  .contacts__container {
+    width: var(--base-container-width);
+    margin: 100px auto;
+    background-image: url(../img/pic/wave.svg), url(../img/pic/wave.svg);
+    background-repeat: no-repeat;
+    background-position-x: left, right;
+    background-position-y: center;
+  }
+
+  .contacts__inner {
+    width: 57.8%;
+    margin: auto;
+    padding: 90px 80px 90px 80px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border: 1px solid $accent-color;
+    border-radius: 5px;
+    background-color: $base-background-color;
+  }
+
+  .contacts__box {
+    margin-bottom: 46px;
+  }
+
+  .contacts__title-small {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .contacts__mail-rd {
+    margin-bottom: 20px;
+  }
+
+  .contacts__button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .contacts__message {
+    position: absolute;
+    width: 330px;
+    margin-top: 10px;
+  }
+}
+
+.mailInput {
+  width: 100%;
+  padding-bottom: 7px;
+  border: none;
+  border-bottom: 1px solid $base-color;
+  font-family: ubunty, sans-serif;
+  font-weight: 300;
+  font-size: $base-text;
+  line-height: 23px;
+  color: $base-color;
+  opacity: 0.6;
+  background-color: transparent;
+}
+
+.button-subscribe {
+  min-width: 135px;
+  padding: 60px 10px;
+  border: 1px solid $base-color;
+  border-radius: 50%;
+  font-family: ubunty, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $base-color;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+
+.button-subscribe:hover {
+  background-color: $accent-color;
+}
+
+.hover-element:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+.hover-btn {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.success {
+  text-align: left;
+  color: green;
+}
+
+.error {
+  text-align: left;
+  font-size: 14px;
+  color: #aa3232;
+}
+
+.error-label {
+  position: absolute;
+  margin-top: 10px;
+  font-size: 10px;
+  color: #aa3232;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.error-label.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.messageSuccess {
+  position: absolute;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #008000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.messageSuccess.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.input-error {
+  border-bottom: 1px solid #aa3232;
+  color: #aa3232;
+}
+
+.button-error {
+  background-color: #aa3232;
+}
+
+.button-error:hover {
+  background-color: #aa3232;
+}
+
+@media screen and (max-width: 1440px) {
+  .contacts {
+    .contacts__message {
+      width: 280px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contacts {
+    .contacts__inner {
+      width: 70%;
+      padding: 60px;
+    }
+
+    .contacts__message {
+      width: 330px;
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .contacts {
+    .contacts__container {
+      background-image: none, none;
+      background-size: 1px;
+    }
+    .contacts__inner {
+      width: 100%;
+      padding: 50px;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .contacts__data {
+      text-align: center;
+    }
+
+    .contacts__title-small {
+      margin-bottom: 25px;
+    }
+
+    .contacts__message {
+      position: static;
+      width: 100%;
+    }
+  }
+
+  .error-label.active,
+  .messageSuccess.active {
+    position: static;
+    text-align: left;
+    margin-top: 5px;
+  }
+}

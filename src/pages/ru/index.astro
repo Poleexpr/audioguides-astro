@@ -6,6 +6,7 @@ import {
   Services,
   Projects,
   Companies,
+  Contacts,
 } from "@/components";
 import { Layout } from "@/layouts";
 import { servicesConfig, projectsConfig, companiesConfig } from "@/utils";
@@ -51,6 +52,16 @@ const companiesConfigRu = companiesConfig.map(({ img, titleRu }) => ({
     <Services title="наши услуги" servicesConfig={servicesConfigRu} />
     <Projects title="наши работы" projectsConfig={projectsConfigRu} />
     <Companies title="с кем мы работали" companiesConfig={companiesConfigRu} />
+    <Contacts
+      title="связаться с нами"
+      contacts="Контакты"
+      receive="Получайте нашу рассылку"
+      placeholder="Введите ваш e-mail..."
+      error="Некорректный электронный адрес"
+      successOne="Вы успешно подписались на рассылку!"
+      successTwo="На Вашу почту придет письмо с подтверждением."
+      subscribe="подписаться"
+    />
   </main>
   <Footer
     copyright="Аудиогиды.ру. Санкт-Петербург. Все права защищены."

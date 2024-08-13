@@ -1,0 +1,119 @@
+---
+import { SectionTitle } from "@/components";
+
+import "./contacts.scss";
+
+interface Props {
+  title: string;
+  contacts: string;
+  receive: string;
+  placeholder: string;
+  error: string;
+  successOne: string;
+  successTwo: string;
+  subscribe: string;
+}
+
+const {
+  title,
+  contacts,
+  receive,
+  placeholder,
+  error,
+  successOne,
+  successTwo,
+  subscribe,
+} = Astro.props;
+---
+
+<section class="contacts" id="contacts">
+  <SectionTitle title={title} className="contacts__title" />
+  <div class="contacts__container">
+    <form id="form" method="POST">
+      <div class="contacts__inner">
+        <div class="contacts__data">
+          <div class="contacts__box">
+            <h4 class="contacts__title-small title4">{contacts}</h4>
+            <p class="contacts__mail-rd text">
+              <a class="hover-link" href="mailto:info@audioguides.ru"
+                >info@audioguides.ru</a
+              >
+            </p>
+            <p class="contacts__phone text">
+              <a class="hover-link" href="tel:+78129158367"
+                >+7 (812) 915-83-67</a
+              >
+            </p>
+          </div>
+          <div class="contacts__mailing">
+            <label for="email" class="contacts__title-small title4"
+              >{receive}</label
+            >
+            <input
+              id="email"
+              class="contacts__mail mailInput"
+              type="text"
+              name="email"
+              placeholder={placeholder}
+            />
+            <div class="contacts__message message"></div>
+          </div>
+
+          <div class="error-label subscribe-error">{error}</div>
+
+          <div class="messageSuccess subscribe-success">
+            <p>{successOne}</p>
+            <p>{successTwo}</p>
+          </div>
+        </div>
+        <div class="contacts__button">
+          <button class="button-subscribe" type="submit">{subscribe}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script is:inline>
+  const form = document.querySelector("#form");
+  const emailInput = document.querySelector("#email");
+  const formButton = document.querySelector(".button-subscribe");
+  const successMessage = document.querySelector(".subscribe-success");
+  const errorMessage = document.querySelector(".subscribe-error");
+  const url =
+    "https://ru.msndr.net/subscriptions/6b936b3e3816613bc549ba1ce056bfdb/form";
+
+  const isValindEmail = (input) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+
+  async function formSend(e) {
+    e.preventDefault();
+    successMessage.classList.remove("active");
+    errorMessage.classList.remove("active");
+    emailInput.classList.remove("input-error");
+    formButton.classList.remove("button-error");
+    const formData = new FormData(form);
+
+    if (isValindEmail(emailInput)) {
+      successMessage.classList.add("active");
+      form.reset();
+      await fetch(url, {
+        method: "POST",
+        body: formData,
+      }).catch((error) => {
+        console.error(error);
+      });
+    } else {
+      errorMessage.classList.add("active");
+      emailInput.classList.add("input-error");
+      formButton.classList.add("button-error");
+    }
+  }
+
+  emailInput.addEventListener("click", () => {
+    errorMessage.classList.remove("active");
+    emailInput.classList.remove("input-error");
+    formButton.classList.remove("button-error");
+  });
+  form.addEventListener(`submit`, formSend);
+</script>
