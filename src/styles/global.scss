@@ -35,6 +35,22 @@ body {
   background-color: $base-background-color;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
+.body_hide {
+  opacity: 0;
+  transition: 0.9s opacity ease-in-out;
+}
+.body_visible {
+  opacity: 1;
+}
+
+main {
+  padding-top: 130px;
+}
+
 a {
   color: inherit;
   text-decoration: none;

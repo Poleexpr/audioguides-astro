@@ -1,0 +1,113 @@
+---
+import { IconLogoAudioguides } from "@/components";
+
+import "./header.scss";
+
+interface Props {
+  services: string;
+  portfolio: string;
+  clients: string;
+  contacts: string;
+}
+
+const { services, portfolio, clients, contacts } = Astro.props;
+---
+
+<header id="header" class="header">
+  <nav class="header__container">
+    <div class="menu__logo-mobile item">
+      <a href="#welcome">
+        <IconLogoAudioguides className="logo-img" />
+      </a>
+    </div>
+    <div class="menu__icon">
+      <button class="menu__icon-open">
+        <span></span>
+      </button>
+    </div>
+    <ul class="header__menu menu">
+      <li class="menu__item item item-1">
+        <a
+          href="#services"
+          data-goto="#services"
+          data-content={services}
+          class="menu__link hover-link">{services}</a
+        >
+      </li>
+      <li class="menu__item item item-2">
+        <a
+          href="#projects"
+          data-goto="#projects"
+          data-content={portfolio}
+          class="menu__link hover-link">{portfolio}</a
+        >
+      </li>
+      <li class="menu__item item item-3">
+        <a href="#welcome">
+          <IconLogoAudioguides className="logo-img" />
+        </a>
+      </li>
+      <li class="menu__item item item-4">
+        <a
+          href="#companies"
+          data-goto="#companies"
+          data-content={clients}
+          class="menu__link hover-link">{clients}</a
+        >
+      </li>
+      <li class="menu__item item item-5">
+        <a
+          href="#contacts"
+          data-goto="#contacts"
+          data-content={contacts}
+          class="menu__link hover-link">{contacts}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script is:inline>
+  const menuLinks = document.querySelectorAll(".item");
+  const iconMenu = document.querySelector(".menu__icon");
+  const menu = document.querySelector(".menu");
+  const navElements = document.querySelectorAll('a[href^="#"]');
+
+  if (iconMenu) {
+    iconMenu.addEventListener("click", () => {
+      document.body.classList.toggle("lock");
+      iconMenu.classList.toggle("active");
+      menu.classList.toggle("active");
+    });
+  }
+
+  if (menuLinks.length > 0) {
+    const onMenuLinkClick = () => {
+      if (iconMenu.classList.contains("active")) {
+        document.body.classList.remove("lock");
+        iconMenu.classList.remove("active");
+        menu.classList.remove("active");
+      }
+    };
+
+    menuLinks.forEach((menuLink) => {
+      menuLink.addEventListener("click", onMenuLinkClick);
+    });
+  }
+
+  navElements.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = link.getAttribute("href");
+      const target = document.querySelector(id);
+      const offsetTop =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        document.querySelector("header").offsetHeight;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
