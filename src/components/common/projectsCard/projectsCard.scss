@@ -8,7 +8,7 @@
   justify-items: center;
 
   .cardContent__description {
-    padding: 25px 0 10px 0;
+    padding: 45px 0 10px 0;
     cursor: grab;
   }
 
@@ -21,7 +21,7 @@
   grid-template-columns: 1fr;
   justify-items: center;
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   width: 100%;
   display: none;
   opacity: 0;
@@ -64,6 +64,6 @@
   }
 
   .circle {
-    bottom: 65px;
+    bottom: 75px;
   }
 }

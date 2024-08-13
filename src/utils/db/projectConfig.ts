@@ -26,8 +26,8 @@ export const projectsConfig = [
   {
     link: "https://izi.travel/ru/browse/d338b024-d424-4972-a133-d217f257e3cf",
     img: "/images/project5.png",
-    titleRu: "Политех на ладони",
-    titleEn: "Polytechnic in your palm",
+    titleRu: "Политех на ладони",
+    titleEn: "Polytechnic in your palm",
   },
   {
     link: "https://izi.travel/ru/6d83-wwf-rossii",
@@ -44,7 +44,7 @@ export const projectsConfig = [
   {
     link: "https://izi.travel/ru/browse/714ef3d8-32e8-483c-aa6d-b4f23da600de?passcode=dgbrhq",
     img: "/images/project8.png",
-    titleRu: "С любовью, Сколково",
+    titleRu: "С любовью, Сколково",
     titleEn: "Skolkovo with love",
   },
   {
