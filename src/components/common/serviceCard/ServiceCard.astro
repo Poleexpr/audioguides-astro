@@ -11,7 +11,11 @@ const { img, descriptionRu, descriptionEn } = Astro.props;
 ---
 
 <figure class="service">
-  <img class="service__img" src={img} alt={descriptionRu ? descriptionRu : descriptionEn} />
+  <img
+    class="service__img"
+    src={img}
+    alt={descriptionRu ? descriptionRu : descriptionEn}
+  />
   <figcaption class="service__text text">
     {descriptionRu ? descriptionRu : descriptionEn}
   </figcaption>
