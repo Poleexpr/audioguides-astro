@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .titleInitial {
   font-family: playfairDisplay, serif;
   font-weight: 700;
@@ -101,7 +103,7 @@
   line-height: 18px;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: $laptop-query) {
   .text3 {
     font-size: 30px;
   }
@@ -113,13 +115,13 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-query) {
   .text3 {
     line-height: 35px;
   }
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: $mobile-query) {
   .title {
     font-size: 40px;
   }

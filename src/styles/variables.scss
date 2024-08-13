@@ -16,26 +16,32 @@ $base-text: 20px;
 $margin: calc(100vw - var(--base-container-width));
 $margin-left: calc($margin / 2);
 
-@media screen and (max-width: 1440px) {
+// media queries
+$laptop-query: 1440px;
+$laptop-query-small: 1200px;
+$tablet-query: 1024px;
+$mobile-query: 834px;
+
+@media screen and (max-width: $laptop-query) {
   :root {
-      --base-container-width: 1100px;
+    --base-container-width: 1100px;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $laptop-query-small) {
   :root {
-      --base-container-width: 900px;
+    --base-container-width: 900px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-query) {
   :root {
-      --base-container-width: 800px;
+    --base-container-width: 800px;
   }
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: $mobile-query) {
   :root {
-      --base-container-width: 85vw;
+    --base-container-width: 85vw;
   }
 }

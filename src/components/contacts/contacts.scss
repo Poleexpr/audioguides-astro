@@ -152,7 +152,7 @@
   background-color: #aa3232;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: $laptop-query) {
   .contacts {
     .contacts__message {
       width: 280px;
@@ -160,7 +160,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-query) {
   .contacts {
     .contacts__inner {
       width: 70%;
@@ -173,7 +173,7 @@
   }
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: $mobile-query) {
   .contacts {
     .contacts__container {
       background-image: none, none;

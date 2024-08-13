@@ -35,7 +35,7 @@
   display: none;
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: $mobile-query) {
   .block-header::after {
     margin-right: -100%;
     right: -18px;
