@@ -1,0 +1,31 @@
+---
+import { SectionTitle, ServiceCard } from "@/components";
+
+import "./services.scss";
+
+interface Props {
+  title: string;
+  servicesConfig: {
+    img: string;
+    descriptionRu?: string;
+    descriptionEn?: string;
+  }[];
+}
+
+const { title, servicesConfig } = Astro.props;
+---
+
+<section class="services" id="services">
+  <SectionTitle className="services__title" title={title} />
+  <div class="services__container">
+    {
+      servicesConfig.map((service) => (
+        <ServiceCard
+          img={service.img}
+          descriptionRu={service.descriptionRu}
+          descriptionEn={service.descriptionEn}
+        />
+      ))
+    }
+  </div>
+</section>

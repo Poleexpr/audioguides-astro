@@ -1,0 +1,57 @@
+---
+import { SectionTitle, IconPlay, IconText, IconSubwoofer } from '@/components';
+
+import "./about.scss";
+
+interface Props {
+  title: string;
+		benefitTitleAudio: string;
+		benefitDescriptionAudio: string;
+		benefitTitleText: string;
+		benefitDescriptionText: string;
+		benefitTitleEquipment: string;
+		benefitDescriptionEquipment: string;
+		videoWebm: string;
+		videoMp4: string;
+}
+
+const { title, benefitTitleAudio, benefitDescriptionAudio, benefitTitleText, benefitDescriptionText, benefitTitleEquipment, benefitDescriptionEquipment, videoWebm, videoMp4 } = Astro.props;
+---
+
+<section class="about" id="about">
+	<SectionTitle className='about__title' classNameTitle='title2' title={title}/>
+	<div class="about__container">
+					<div class="about__benefits benefits">
+									<div class="benefits__benefit benefit">
+													<div class="benefit__container">
+																	<IconPlay className="benefit__img" />
+																	<div class="benefit__paragraph">
+																					<h3 class="benefit__title title3">{benefitTitleAudio}</h3>
+																					<p class="benefit__text text">{benefitDescriptionAudio}</p>
+																	</div>
+													</div>
+													<div class="benefit__container">
+																	<IconText className="benefit__img" />
+																	<div class="benefit__paragraph">
+																					<h3 class="benefit__title title3">{benefitTitleText}</h3>
+																					<p class="benefit__text text">{benefitDescriptionText}</p>
+																	</div>
+													</div>
+													<div class="benefit__container">
+																	<IconSubwoofer className="benefit__img"/>
+																	<div class="benefit__paragraph">
+																					<h3 class="benefit__title title3">{benefitTitleEquipment}</h3>
+																					<p class="benefit__text text">{benefitDescriptionEquipment}</p>
+																	</div>
+													</div>
+									</div>
+					</div>
+					<div class="about__video video-wrapper">
+									<video id="videoAudioguides" class="video" autoplay
+													controls muted loop poster="../../images/posterimage.jpg">
+													<source src={videoWebm} type="video/webm" />
+													<source src={videoMp4} type="video/mp4" />
+									</video>
+					</div>
+	</div>
+</section>

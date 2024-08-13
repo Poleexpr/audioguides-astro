@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+.block-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.block-header::before,
+.block-header::after {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	height: 1px;
+	background-color: $base-color;
+	position: relative;
+}
+
+.block-header::before {
+	margin-left: -100%;
+	left: -18px;
+}
+
+.block-header::after {
+	margin-right: -100%;
+	right: -30px;
+}

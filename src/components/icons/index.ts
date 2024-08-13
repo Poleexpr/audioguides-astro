@@ -5,3 +5,6 @@ export { default as IconLogoTg } from "./IconLogoTg.astro";
 export { default as IconLogoRd } from "./IconLogoRd.astro";
 export { default as IconLogoFb } from "./IconLogoFb.astro";
 export { default as IconLogoAudioguides } from "./IconLogoAudioguides.astro";
+export { default as IconPlay } from "./IconPlay.astro";
+export { default as IconText } from "./IconText.astro";
+export { default as IconSubwoofer } from "./IconSubwoofer.astro";

@@ -1,0 +1,15 @@
+---
+import "./sectionTitle.scss";
+
+interface Props {
+  title: string;
+		className?: string;
+		classNameTitle?: string;
+}
+
+const { title, className, classNameTitle } = Astro.props;
+---
+
+<div class=`${className} block-header`>
+	<h2 class=`${classNameTitle} title2`>{title}</h2>
+</div>

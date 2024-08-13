@@ -1,0 +1,21 @@
+.service {
+  display: grid;
+  gap: 33px;
+  justify-items: center;
+
+  .service__text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 834px) {
+	.service {
+			width: 80%;
+			margin: auto;
+			gap: 20px;
+
+			.service__img {
+				width: 70px;
+		}
+	}
+}

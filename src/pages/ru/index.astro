@@ -1,6 +1,7 @@
 ---
-import { Welcome, Footer } from "@/components";
+import { Welcome, Footer, About, Services } from "@/components";
 import { Layout } from "@/layouts";
+import {servicesConfig} from "@/utils";
 ---
 
 <Layout
@@ -13,9 +14,21 @@ import { Layout } from "@/layouts";
       order="Заказать аудиогид"
       isCurrentLanguageRu
     />
+    <About
+      title="О нас"
+      benefitTitleAudio="Аудио"
+      benefitDescriptionAudio="Озвучка с актёрами и дикторами — носителями языков"
+      benefitTitleText="Текст"
+      benefitDescriptionText="Написание, редактура, перевод носителями языков"
+      benefitTitleEquipment="Оборудование"
+      benefitDescriptionEquipment="Аренда и продажа оборудования для экскурсий"
+      videoWebm="../../../public/videos/audioguidesRu.webm"
+      videoMp4="../../../public/videos/audioguidesRu.mp4"
+    />
+    <Services title="наши услуги" servicesConfig={servicesConfig} />
+  </main>
     <Footer
       copyright="Аудиогиды.ру. Санкт-Петербург. Все права защищены."
       textUp="В начало"
     />
-  </main>
 </Layout>
