@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .titleInitial {
   font-family: playfairDisplay, serif;
@@ -116,16 +116,25 @@
 }
 
 @media screen and (max-width: $tablet-query) {
-  .text3 {
-    line-height: 35px;
-  }
-}
-
-@media screen and (max-width: $mobile-query) {
   .title {
     font-size: 40px;
   }
 
+  /*.text3 {
+    line-height: 35px;
+  }*/
+
+  .text3 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 300;
+    //color: $base-color;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+  }
+}
+
+@media screen and (max-width: $mobile-query) {
   .title2 {
     font-size: 26px;
     /*padding: 20px 0;*/
@@ -149,15 +158,6 @@
 
   .text2 {
     font-size: 18px;
-  }
-
-  .text3 {
-    text-align: center;
-    font-size: 20px;
-    line-height: 23px;
-    font-weight: 300;
-    //color: $base-color;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
   }
 
   .link {

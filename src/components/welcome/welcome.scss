@@ -188,7 +188,7 @@
   }
 }
 
-@media screen and (max-width: $mobile-query) {
+@media screen and (max-width: $tablet-query) {
   .welcome__container {
     margin: 0px auto 300px auto;
     grid-template-columns: 1fr;
