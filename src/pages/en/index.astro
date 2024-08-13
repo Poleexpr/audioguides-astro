@@ -1,17 +1,29 @@
 ---
-import { Welcome, Footer, About, Services, Projects } from "@/components";
+import {
+  Welcome,
+  Footer,
+  About,
+  Services,
+  Projects,
+  Companies,
+} from "@/components";
 import { Layout } from "@/layouts";
-import { servicesConfig, projectConfig } from "@/utils";
+import { servicesConfig, projectsConfig, companiesConfig } from "@/utils";
 
 const servicesConfigEn = servicesConfig.map(({ img, descriptionEn }) => ({
   img,
   descriptionEn,
 }));
 
-const projectConfigEn = projectConfig.map(({ link, img, titleEn }) => ({
+const projectsConfigEn = projectsConfig.map(({ link, img, titleEn }) => ({
   link,
   img,
   titleEn,
+}));
+
+const companiesConfigEn = companiesConfig.map(({ img, titleRu }) => ({
+  img,
+  titleRu,
 }));
 ---
 
@@ -35,7 +47,8 @@ const projectConfigEn = projectConfig.map(({ link, img, titleEn }) => ({
       videoMp4="../../../public/videos/audioguidesEn.mp4"
     />
     <Services title="services" servicesConfig={servicesConfigEn} />
-    <Projects title="portfolio" projectConfig={projectConfigEn} />
+    <Projects title="portfolio" projectsConfig={projectsConfigEn} />
+    <Companies title="clients" companiesConfig={companiesConfigEn} />
   </main>
   <Footer
     copyright="Audioguides.ru. Saint Petersburg. All rights reserved."

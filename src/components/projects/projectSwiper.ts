@@ -3,8 +3,6 @@ import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 
-import "./projects.scss";
-
 export const swiper = new Swiper(".projestsSwiper", {
   modules: [Navigation, Pagination],
   grabCursor: true,

@@ -8,7 +8,7 @@ import {
 
 interface Props {
   title: string;
-  projectConfig: {
+  projectsConfig: {
     link: string;
     img: string;
     titleRu?: string;
@@ -16,7 +16,9 @@ interface Props {
   }[];
 }
 
-const { title, projectConfig } = Astro.props;
+const { title, projectsConfig } = Astro.props;
+
+import "./projects.scss";
 ---
 
 <section class="projects" id="projects">
@@ -26,7 +28,7 @@ const { title, projectConfig } = Astro.props;
       <div class="swiper projestsSwiper">
         <div class="swiper-wrapper">
           {
-            projectConfig.map((card) => (
+            projectsConfig.map((card) => (
               <div class="swiper-slide">
                 <ProjectCard
                   link={card.link}

@@ -5,3 +5,4 @@ export * from "./common";
 export * from "./about";
 export * from "./services";
 export * from "./projects";
+export * from "./companies";

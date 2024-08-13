@@ -1,0 +1,13 @@
+---
+import "./companyCard.scss";
+
+interface Props {
+  img: string;
+  titleRu?: string;
+  titleEn?: string;
+}
+
+const { img, titleRu, titleEn } = Astro.props;
+---
+
+<img src={img} alt={titleRu ? titleRu : titleEn} class="company__img" />

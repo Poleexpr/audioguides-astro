@@ -1,0 +1,39 @@
+---
+import { SectionTitle, CompanyCard } from "@/components";
+
+import "./companies.scss";
+
+interface Props {
+  title: string;
+  companiesConfig: {
+    img: string;
+    titleRu?: string;
+    titleEn?: string;
+  }[];
+}
+
+const { title, companiesConfig } = Astro.props;
+---
+
+<section class="companies" id="companies">
+  <SectionTitle title={title} className="companies__title" />
+  <div class="companies__container">
+    <div class="swiper swiper-container companiesSwiper">
+      <div class="swiper-wrapper">
+        {
+          companiesConfig.map((card) => (
+            <div class="swiper-slide">
+              <CompanyCard
+                img={card.img}
+                titleRu={card.titleRu}
+                titleEn={card.titleEn}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="./companiesSwiper.ts"></script>

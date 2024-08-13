@@ -1,4 +1,4 @@
-export const projectConfig = [
+export const projectsConfig = [
   {
     link: "https://izi.travel/ru/223c-noch-muzeev-2016-v-sankt-peterburge-ekskursii/ru",
     img: "/images/project1.png",
