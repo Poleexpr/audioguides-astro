@@ -1,8 +1,10 @@
 import Swiper from "swiper";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
 export const companySwiper = new Swiper(".companiesSwiper", {
+  modules: [Autoplay],
   effect: "slide",
   speed: 900,
   slidesPerView: 4,

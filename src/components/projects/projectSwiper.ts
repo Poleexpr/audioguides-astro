@@ -1,10 +1,10 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 
 import "swiper/css";
 
 export const swiper = new Swiper(".projestsSwiper", {
-  modules: [Navigation, Pagination],
+  modules: [Navigation, Pagination, EffectCoverflow],
   grabCursor: true,
   centeredSlides: true,
   effect: "coverflow",

@@ -12,7 +12,7 @@ module.exports = {
 		},
 		{
 			files: ["**/*.astro", "*.astro"],
-			plugins: ["astro"],
+			plugins: ["astro", "import"],
 			env: {
 				node: true,
 				"astro/astro": true,
@@ -66,9 +66,6 @@ module.exports = {
 				ecmaVersion: 'latest',
 				sourceType: "module",
 			},
-			extends: [
-				'airbnb-base',
-			],
 			rules: {
 				"prettier/prettier": "off",
 			},

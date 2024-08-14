@@ -83,11 +83,14 @@
   .carousel__control {
     display: flex;
     justify-content: center;
-    height: 28px;
+    //height: 28px;
     align-content: center;
+    flex-wrap: wrap;
   }
 
   .carousel__btn {
+    position: static;
+    width: 85px;
     align-self: center;
     cursor: pointer;
     margin: 0 30px;
