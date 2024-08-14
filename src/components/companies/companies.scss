@@ -25,7 +25,6 @@
   .swiper-container {
     display: flex;
     cursor: grab;
-    //scroll-behavior: smooth;
   }
 
   .swiper {
@@ -43,15 +42,6 @@
     -webkit-backdrop-filter: blur(10px);
     background-color: rgb(199, 199, 199, 0.5);
   }
-
-  /*.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-  }*/
 }
 
 @media screen and (max-width: 414px) {
