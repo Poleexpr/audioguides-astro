@@ -1,14 +1,14 @@
 <h1 align="center">
   <br>
-  <a href="https://audioguides.ru/"><img src="/favicon.ico" alt="Demo" width="200"></a>
+  <a href="https://audioguides.ru/"><img src="/public/favicon.ico" alt="Demo" width="200"></a>
   <br>
   Audioguides
   <br>
 </h1>
 
-<h4 align="center"Multilingual website for a studio specialising in the production of audio guides.</h4>
+<h4 align="center">Multilingual website for a studio specialising in the production of audio guides.</h4>
 
-![screenshot](/images/demo.png)
+![screenshot](/public/images/demo.png)
 
 ## How To Use
 
