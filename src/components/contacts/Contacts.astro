@@ -29,7 +29,11 @@ const {
 <section class="contacts" id="contacts">
   <SectionTitle title={title} className="contacts__title" />
   <div class="contacts__container">
-    <form id="form" method="POST">
+    <form
+      id="form"
+      method="POST"
+      action="https://ru.msndr.net/subscriptions/6b936b3e3816613bc549ba1ce056bfdb/form"
+    >
       <div class="contacts__inner">
         <div class="contacts__data">
           <div class="contacts__box">
@@ -50,10 +54,10 @@ const {
               >{receive}</label
             >
             <input
-              id="email"
+              id="recipient_email"
               class="contacts__mail mailInput"
               type="text"
-              name="email"
+              name="recipient[email]"
               placeholder={placeholder}
             />
             <div class="contacts__message message"></div>
@@ -76,7 +80,7 @@ const {
 
 <script is:inline>
   const form = document.querySelector("#form");
-  const emailInput = document.querySelector("#email");
+  const emailInput = document.querySelector("#recipient_email");
   const formButton = document.querySelector(".button-subscribe");
   const successMessage = document.querySelector(".subscribe-success");
   const errorMessage = document.querySelector(".subscribe-error");
